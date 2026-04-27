@@ -54,7 +54,6 @@
             cargo-watch
             cargo-expand
           ];
-          shellHook = "exec nu";
         };
       };
     });
