@@ -65,7 +65,7 @@ impl Provider for NixosProvider {
         _diags: &mut Diagnostics,
     ) -> Option<HashMap<String, Box<dyn tf_provider::DynamicResource>>> {
         Some(map! {
-            "nixos_configuration" => Box::new(NixosConfigurationResource) as Box<_>
+            "nixos_configuration" => Box::new(NixosConfigurationResource) as Box<dyn tf_provider::DynamicResource>
         })
     }
 
@@ -74,7 +74,7 @@ impl Provider for NixosProvider {
         _diags: &mut Diagnostics,
     ) -> Option<HashMap<String, Box<dyn tf_provider::DynamicDataSource>>> {
         Some(map! {
-            "nixos_system_info" => Box::new(SystemInfoDataSource) as Box<_>
+            "nixos_system_info" => Box::new(SystemInfoDataSource) as Box<dyn tf_provider::DynamicDataSource>
         })
     }
 }
